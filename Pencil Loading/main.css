@@ -1,0 +1,114 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    color: #1e197f;
+    background: hsl(0, 0%, 0%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.8rem;
+  }
+  .pencil {
+    width: 300px;
+    height: 40px;
+    position: relative;
+    transform: rotate(135deg);
+    transform-origin: center;
+    animation: pencil-animation 10s infinite;
+  }
+  .pencil-ball-point {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 10px;
+    width: 10px;
+    background: #1e197f;
+    border-radius: 50px;
+    transform: translateY(-50%);
+  }
+  .pencil-cap {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 12%;
+    height: 100%;
+    background: #232123;
+    transform: translateY(-50%);
+    clip-path: polygon(20% 40%, 100% 0%, 100% 100%, 20% 60%);
+  }
+  .pencil-cap-base {
+    position: absolute;
+    left: 12%;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background: #232123;
+  }
+  .pencil-middle {
+    position: absolute;
+    left: calc(12% + 20px);
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background: #1e197f;
+  }
+  .pencil-eraser {
+    position: absolute;
+    left: calc(82% + 20px);
+    top: 0;
+    height: 100%;
+    width: 11%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #fffeff;
+  }
+  .line {
+    position: relative;
+    top: 80px;
+    right: 103px;
+    height: 10px;
+    width: 1020px;
+    z-index: -1;
+    border-radius: 50px;
+    background: #1e197f;
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: line-animation 10s infinite;
+  }
+  @keyframes pencil-animation {
+    0% {
+      transform: rotate(135deg);
+    }
+    20% {
+      transform: rotate(315deg);
+    }
+    45% {
+      transform: translateX(300px) rotate(315deg);
+    }
+    55% {
+      transform: translateX(300px) rotate(495deg);
+    }
+    100% {
+      transform: rotate(495deg);
+    }
+  }
+  @keyframes line-animation {
+    20% {
+      transform: scaleX(0);
+    }
+    45% {
+      transform: scaleX(0.6);
+    }
+    55% {
+      transform: scaleX(0.6);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
+  h2 {
+    position: relative;
+    top: 150px;
+    right: 75px;
+  }
